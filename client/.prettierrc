@@ -9,7 +9,8 @@
   "jsxSingleQuote": false,
   "bracketSpacing": true,
   "endOfLine": "auto",
-  "plugins": ["prettier-plugin-tailwindcss", "@ianvs/prettier-plugin-sort-imports"],
+  "tailwindFunctions": ["clsx"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
   "importOrder": [
     "^(next/(.*)$)|(next$)",
     "",
