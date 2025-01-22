@@ -7,9 +7,9 @@ export const Footer = () => {
     <footer className="bg-gray-900 py-12 text-white">
       <div className="container mx-auto grid grid-cols-1 gap-8 md:grid-cols-4">
         <div>
-          <h3 className="mb-4 text-lg font-semibold">StreamLine</h3>
+          <h3 className="mb-4 text-lg font-semibold">Portfio</h3>
           <p className="text-gray-400">
-            Simplifying project management for teams of all sizes.
+            Simplifying portfolio creation for everyone.
           </p>
         </div>
         <div>
