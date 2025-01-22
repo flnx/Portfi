@@ -1,0 +1,57 @@
+import Image from 'next/image';
+
+const testimonials = [
+  {
+    quote:
+      'I’m not a designer, so having pre-built templates that still look professional saved me a ton of time. My portfolio looks amazing now.',
+    author: 'John Smith',
+    title: 'Full-Stack Developer',
+    avatar: '/placeholder.svg?height=60&width=60',
+  },
+  {
+    quote:
+      'I’ve landed more clients since using this tool to create my portfolio. It’s professional, sleek, and user-friendly.',
+    author: 'John Smith',
+    title: 'Freelancer',
+    avatar: '/placeholder.svg?height=60&width=60',
+  },
+  {
+    quote:
+      'The platform makes it so simple to create a portfolio that stands out. The support team is fantastic, too!',
+    author: 'Emily Brown',
+    title: 'UX Designer, StartupX',
+    avatar: '/placeholder.svg?height=60&width=60',
+  },
+];
+
+export const Testimonials = () => {
+  return (
+    <section id="testimonials" className="bg-white py-20">
+      <div className="container mx-auto">
+        <h2 className="mb-12 text-center text-3xl font-bold">
+          What Our Community Says
+        </h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="rounded-lg bg-gray-50 p-6 shadow-md">
+              <p className="mb-4 text-gray-600">"{testimonial.quote}"</p>
+              <div className="flex items-center">
+                <Image
+                  src={testimonial.avatar || '/placeholder.svg'}
+                  alt={testimonial.author}
+                  width={60}
+                  height={60}
+                  className="mr-4 rounded-full"
+                />
+                <div>
+                  <p className="font-semibold">{testimonial.author}</p>
+                  <p className="text-sm text-gray-500">{testimonial.title}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};

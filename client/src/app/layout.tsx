@@ -4,6 +4,9 @@ import type { Metadata } from 'next';
 
 import './globals.css';
 
+import { Footer } from '@/components/Footer/Footer';
+import { Navbar } from '@/components/Navbar/Navbar';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -27,7 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
+        <div className="min-h-svh md:min-h-screen">
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
