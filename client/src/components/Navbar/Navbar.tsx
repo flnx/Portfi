@@ -10,7 +10,7 @@ export const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <Activity className="h-6 w-6 text-primary" />
-          <span className="text-xl font-bold text-gray-900">StreamLine</span>
+          <span className="text-xl font-bold text-gray-900">Portfio</span>
         </Link>
         <nav className="hidden space-x-6 md:flex">
           <Link href="#features" className="text-gray-600 hover:text-gray-900">

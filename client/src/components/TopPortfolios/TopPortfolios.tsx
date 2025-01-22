@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Badge } from '@/components/ui/badge';
 import {
@@ -126,42 +127,47 @@ export const TopPortfolios = () => {
         <h2 className="mb-12 text-center text-3xl font-bold">Top User Portfolios</h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {portfolios.map((portfolio) => (
-            <Card key={portfolio.id} className="flex flex-col overflow-hidden">
-              <CardHeader className="p-0">
-                <Image
-                  src={portfolio.image || '/placeholder.svg'}
-                  alt={portfolio.title}
-                  width={400}
-                  height={300}
-                  className="h-48 w-full object-cover"
-                />
-              </CardHeader>
-              <CardContent className="p-4">
-                <CardTitle className="mb-2 text-xl transition-colors duration-300 group-hover:text-primary">
-                  {portfolio.title}
-                </CardTitle>
-                <p className="mb-2 text-sm text-gray-600">by {portfolio.author}</p>
-                <p className="mb-4 text-sm text-gray-700">{portfolio.description}</p>
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {portfolio.tags.map((tag, index) => (
-                    <Badge key={index} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-                <div className="mb-2 text-sm text-gray-600">
-                  <strong>Technologies:</strong> {portfolio.technologies.join(', ')}
-                </div>
-              </CardContent>
-              <CardFooter className="mt-auto flex items-center justify-between bg-gray-50 p-4">
-                <span className="text-sm text-gray-600">
-                  {portfolio.projectCount} Projects
-                </span>
-                <span className="text-sm text-gray-600">
-                  {portfolio.likes} Likes
-                </span>
-              </CardFooter>
-            </Card>
+            <Link key={portfolio.id} href="/portfolio/1">
+              <Card className="flex flex-col overflow-hidden">
+                <CardHeader className="p-0">
+                  <Image
+                    src={portfolio.image || '/placeholder.svg'}
+                    alt={portfolio.title}
+                    width={400}
+                    height={300}
+                    className="h-48 w-full object-cover"
+                  />
+                </CardHeader>
+                <CardContent className="p-4">
+                  <CardTitle className="mb-2 text-xl transition-colors duration-300 group-hover:text-primary">
+                    {portfolio.title}
+                  </CardTitle>
+                  <p className="mb-2 text-sm text-gray-600">by {portfolio.author}</p>
+                  <p className="mb-4 text-sm text-gray-700">
+                    {portfolio.description}
+                  </p>
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {portfolio.tags.map((tag, index) => (
+                      <Badge key={index} variant="secondary">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="mb-2 text-sm text-gray-600">
+                    <strong>Technologies:</strong>{' '}
+                    {portfolio.technologies.join(', ')}
+                  </div>
+                </CardContent>
+                <CardFooter className="mt-auto flex items-center justify-between bg-gray-50 p-4">
+                  <span className="text-sm text-gray-600">
+                    {portfolio.projectCount} Projects
+                  </span>
+                  <span className="text-sm text-gray-600">
+                    {portfolio.likes} Likes
+                  </span>
+                </CardFooter>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
