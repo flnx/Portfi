@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PortfiModels.Enums
 {
-    public enum SocialMediaPlatforms
+    public enum SocialMediaPlatform
     {
         GitHub = 1,
         LinkedIn = 2,
