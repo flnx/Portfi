@@ -1,3 +1,5 @@
+'use client';
+
 import { Mail } from 'lucide-react';
 import React from 'react';
 
@@ -20,8 +22,8 @@ export const GoogleLogin = () => {
       if (error) {
         throw new Error(error.message);
       }
-    } catch (e) {
-      console.error('Something went wrongg');
+    } catch (_error: unknown) {
+      console.error(_error);
       // toast.error('Something went wrong. Please try again.');
     }
   };
