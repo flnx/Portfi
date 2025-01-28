@@ -3,12 +3,12 @@
 import { Mail } from 'lucide-react';
 import React from 'react';
 
-import { createClient } from '@/utils/supabase/client';
+import { createSupabaseBrowserClient } from '@/utils/supabase/client';
 
 import { Button } from '@/components/ui/button';
 
 export const GoogleLogin = () => {
-  const supabase = createClient();
+  const supabase = createSupabaseBrowserClient();
 
   const loginWithGoogle = async () => {
     try {
@@ -22,9 +22,8 @@ export const GoogleLogin = () => {
       if (error) {
         throw new Error(error.message);
       }
-    } catch (_error: unknown) {
-      console.error(_error);
-      // toast.error('Something went wrong. Please try again.');
+    } catch (e) {
+      console.error(e);
     }
   };
 
